@@ -1,2 +1,3 @@
 rootProject.name = "TestLibraryCompose"
 include ':app'
+include ':mylibrary'
