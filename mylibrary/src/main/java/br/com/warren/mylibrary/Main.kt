@@ -1,7 +1,9 @@
 package br.com.warren.mylibrary
 
-class Main {
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
 
-    fun classMain() {}
-
+@Composable
+fun MainText(text: String) {
+    Text(text = text)
 }
