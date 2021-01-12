@@ -5,7 +5,7 @@ def getGroupId = {
 }
 
 def getVersionName = {
-    return '1.0.14'
+    return '1.0.15'
 }
 
 def getArtifactId = {
@@ -76,9 +76,9 @@ publishing {
                 password = "91abb80532968a2bd61355308ea9b3806dac381c"//System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN') ?: project.properties['GITHUB_PERSONAL_ACCESS_TOKEN']
             }
         }
-//        maven {
-//            name = 'CustomMavenRepo'
-//            url = "file://${buildDir}/repo"
-//        }
+        maven {
+            name = 'CustomMavenRepo'
+            url = "file://${buildDir}/repo"
+        }
     }
 }
