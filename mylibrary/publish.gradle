@@ -21,8 +21,8 @@ publishing {
     publications {
         mylibrary(MavenPublication) {
             groupId getGroupId()
-            artifactId getVersionName()
-            version getArtifactId()
+            artifactId getArtifactId()
+            version getVersionName()
 
             artifact("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
             //artifact(sourceJar)
