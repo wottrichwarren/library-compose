@@ -19,6 +19,8 @@ jobs:
           java-version: 11
       - name: Build assemble
         run: gradle mylibrary:assemble
+      
+      - uses: actions/checkout@v1
       - name: Run gradle publish
         run: gradle publish
           
