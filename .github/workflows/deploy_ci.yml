@@ -9,16 +9,16 @@ jobs:
     name: Run deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Publish library
-        env: 
+      - env: 
           ACTION_USER_ID: "wottrichwarren"
           ACTION_PERSONAL_ACCESS_TOKEN: "91abb80532968a2bd61355308ea9b3806dac381c"
+      - uses: actions/checkout@v1
+      - name: Setup java 11
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Build assemble
+        run: gradle mylibrary:assemble
       - name: Run gradle publish
-        run: |
-          gradle mylibrary:assemble
-          gradle publish
+        run: gradle publish
           
