@@ -10,9 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Environment variable
+      - name: Publish library
         env: 
           ACTION_USER_ID: "oiwarren"
           ACTION_PERSONAL_ACCESS_TOKEN: $PERSONAL_ACCESS_TOKEN
-      - name: Publish library
         run: bash gradle:coreui-tokens:publish
