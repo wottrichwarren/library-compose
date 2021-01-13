@@ -12,6 +12,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: Publish library
         env: 
-          ACTION_USER_ID: "oiwarren"
-          ACTION_PERSONAL_ACCESS_TOKEN: $PERSONAL_ACCESS_TOKEN
+          ACTION_USER_ID: "wottrichwarren"
+          ACTION_PERSONAL_ACCESS_TOKEN: "91abb80532968a2bd61355308ea9b3806dac381c"
         run: bash gradle:mylibrary:publish
