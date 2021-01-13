@@ -1,0 +1,19 @@
+name: Deploy library
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Environment variable
+        env: 
+          ACTION_USER_ID: "oiwarren"
+          ACTION_PERSONAL_ACCESS_TOKEN: $PERSONAL_ACCESS_TOKEN
+
+      - name: Publish library
+        run: bash gradle:coreui-tokens:publish
