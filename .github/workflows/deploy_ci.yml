@@ -21,4 +21,9 @@ jobs:
         run: |
           gradle mylibrary:assemble
           gradle publish
+      - name: Bump version and push tag
+        uses: ChloePlanet/github-tag-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
           
