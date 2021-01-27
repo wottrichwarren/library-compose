@@ -21,8 +21,14 @@ jobs:
         run: |
           gradle mylibrary:assemble
           gradle publish
-      - name: Bump version and push tag
-        uses: ChloePlanet/github-tag-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
+      - name: Create tag
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            github.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/tagname",
+              sha: context.sha
+            })
