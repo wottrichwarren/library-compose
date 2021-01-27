@@ -5,7 +5,7 @@ def getGroupId = {
 }
 
 def getVersionName = {
-    return '1.0.24'
+    return '1.0.25'
 }
 
 def getArtifactId = {
