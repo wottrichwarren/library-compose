@@ -12,11 +12,6 @@ def getArtifactId = {
     return 'mylibrary'
 }
 
-//task sourceJar(type: Jar) {
-//    from android.sourceSets.main.java.srcDirs
-//    classifier "sources"
-//}
-
 publishing {
     publications {
         mylibrary(MavenPublication) {
@@ -24,8 +19,9 @@ publishing {
             artifactId getArtifactId()
             version getVersionName()
 
-            artifact("$buildDir/outputs/aar/${getArtifactId()}-release.aar")
-            //artifact(sourceJar)
+            artifact("$buildDir/outputs/aar/${getArtifactId()}-release.aar") {
+                builtBy tasks.getByPath("assemble")
+            }
 
             pom.withXml {
                 final dependenciesNode = asNode().appendNode('dependencies')
@@ -60,8 +56,8 @@ publishing {
             name = "GithubPackages"
             url = uri("https://maven.pkg.github.com/wottrichwarren/library-compose")
             credentials {
-                username = "wottrichwarren"//System.getenv('GITHUB_USER') ?: project.properties['GITHUB_USER']
-                password = "91abb80532968a2bd61355308ea9b3806dac381c"//System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN') ?: project.properties['GITHUB_PERSONAL_ACCESS_TOKEN']
+                username = System.getenv('GITHUB_USER')
+                password = System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN')
             }
         }
         maven {
