@@ -12,10 +12,12 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    name: Build
-    runs-on: ubuntu-latest
+    # The type of runner that the job will run on
+    runs-on: macos-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - uses: actions/checkout@main
-    - name: copy file
-    - run: |
-        ls
+    - uses: actions/checkout@v1
+    - name: Update android lib project with new resources
+      run: |
+        cp -R resources AndroidApiScheme
