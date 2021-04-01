@@ -12,13 +12,12 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: macos-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-    - name: Update android lib project with new resources
-      run: |
-        cd ..
-        pwd
-        cp -R resources AndroidApiScheme
+    - uses: actions/checkout@master
+    - name: copy file
+      uses: canastro/copy-file-action@master
+      with:
+        source: "resources"
+        target: "AndroidApiScheme"
