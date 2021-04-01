@@ -19,5 +19,6 @@ jobs:
     steps:
     - name: Update android lib project with new resources
       run: |
+        cd ..
         pwd
         cp -R resources AndroidApiScheme
