@@ -8,10 +8,12 @@ jobs:
     steps:
       - name: Read value from Properties-file
         id: tag_version
-        uses: christian-draeger/read-properties@1.0.1
-        with:
-          path: 'version.properties'
-          property: 'version'
+        run: |
+          pwd
+        #uses: christian-draeger/read-properties@1.0.1
+        #with:
+        #  path: 'version.properties'
+        #  property: 'version'
 
       - name: Create version tag
         uses: actions/github-script@v3
