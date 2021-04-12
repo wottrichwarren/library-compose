@@ -12,7 +12,7 @@ jobs:
         with:
           run: |
             echo "a"
-          path: '/home/runner/work/library-compose/library-compose/version.properties'
+          path: '../version.properties'
           property: 'version'
 
       - name: Create version tag
