@@ -9,7 +9,7 @@ jobs:
       - name: Read value from Properties-file
         id: tag_version
         run: |
-          pwd
+          if exist version.properties exit 1
         #uses: christian-draeger/read-properties@1.0.1
         #with:
         #  path: 'version.properties'
