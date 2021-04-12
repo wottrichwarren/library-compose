@@ -6,6 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
       - name: Read value from Properties-file
         id: tag_version
         uses: christian-draeger/read-properties@1.0.1
