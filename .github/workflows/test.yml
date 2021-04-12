@@ -10,9 +10,7 @@ jobs:
         id: tag_version
         uses: christian-draeger/read-properties@1.0.1
         with:
-          run: |
-            echo "a"
-          path: '../version.properties'
+          path: '../../version.properties'
           property: 'version'
 
       - name: Create version tag
