@@ -9,7 +9,7 @@ jobs:
       - name: Read value from Properties-file
         id: tag_version
         run: |
-          if [ -f "version.properties" ]; then
+          if [ -f version.properties ]; then
             echo "version.properties exists."
           else 
             echo "version.properties does not exist."
