@@ -8,17 +8,10 @@ jobs:
     steps:
       - name: Read value from Properties-file
         id: tag_version
-        working-directory: ./
-        run: |
-          if [ -f version.properties ]; then
-            echo "version.properties exists."
-          else 
-            echo "version.properties does not exist."
-          fi
-        #uses: christian-draeger/read-properties@1.0.1
-        #with:
-        #  path: 'version.properties'
-        #  property: 'version'
+        uses: christian-draeger/read-properties@1.0.1
+        with:
+          path: version.properties
+          property: version
 
       - name: Create version tag
         uses: actions/github-script@v3
