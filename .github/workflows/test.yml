@@ -10,8 +10,10 @@ jobs:
         id: tag_version
         uses: christian-draeger/read-properties@1.0.1
         with:
-          path: '~/version.properties'
-          property: 'version'
+        #  path: '~/version.properties'
+        #  property: 'version'
+          script: |
+            pwd
 
       - name: Create version tag
         uses: actions/github-script@v3
