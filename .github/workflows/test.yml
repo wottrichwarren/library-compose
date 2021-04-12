@@ -8,6 +8,7 @@ jobs:
     steps:
       - name: Read value from Properties-file
         id: tag_version
+        working-directory: ./
         run: |
           if [ -f version.properties ]; then
             echo "version.properties exists."
