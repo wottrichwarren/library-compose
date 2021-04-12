@@ -9,7 +9,11 @@ jobs:
       - name: Read value from Properties-file
         id: tag_version
         run: |
-          if exist version.properties exit 1
+          if [ -f "version.properties" ]; then
+            echo "version.properties exists."
+          else 
+            echo "version.properties does not exist."
+          fi
         #uses: christian-draeger/read-properties@1.0.1
         #with:
         #  path: 'version.properties'
