@@ -22,6 +22,6 @@ jobs:
           tag_name: ${{ steps.tag_version.outputs.value }}
           release_name: Release ${{ steps.tag_version.outputs.value }}
           body: |
-            See updates on CHANGELOGS.MD
+            See updates on [CHANGELOG.MD](https://google.com)
           draft: false
           prerelease: false
