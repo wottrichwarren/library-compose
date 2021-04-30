@@ -19,10 +19,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Run gradle publish
-        run: |
-          echo "UserId - $ACTION_USER_ID | PAT - $ACTION_PERSONAL_ACCESS_TOKEN" 
-          gradle mylibrary:assemble
-          gradle publish
+      #- name: Run gradle publish
+      #  run: |
+      #    echo "UserId - $ACTION_USER_ID | PAT - $ACTION_PERSONAL_ACCESS_TOKEN" 
+      #    gradle mylibrary:assemble
+      #    gradle publish
       - name: Create tag
         uses: ./.github/create_tag
