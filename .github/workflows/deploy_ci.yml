@@ -25,4 +25,4 @@ jobs:
       #    gradle mylibrary:assemble
       #    gradle publish
       - name: Create tag
-        uses: ./.github/create_tag
+        uses: ./.github/actions/create_tag/create_tag
