@@ -1,0 +1,11 @@
+name: Create version tag
+uses: actions/github-script@v3
+with:
+  github-token: ${{ github.token }}
+  script: |
+    github.git.createRef({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      ref: "refs/tags/b${{ github.run_number }}(production)",
+      sha: context.sha
+    })
