@@ -1,4 +1,4 @@
-name: Deploy android apollo library
+name: Workflow test
 
 on:
   workflow_run:
@@ -11,5 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         run: |
           echo "working"
