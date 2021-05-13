@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Conclusion
         run: |
-          if [ 'true' = 'true' ] 
+          if [ 'false' = 'true' ] 
           then
             exit 0
           else
