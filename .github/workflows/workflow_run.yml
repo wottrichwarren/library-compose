@@ -1,1 +1,15 @@
+name: Deploy android apollo library
 
+on:
+  workflow_run:
+    workflows: [ "Workflow Dispatcher" ]
+    types: [completed]
+
+jobs:
+  build:
+    name: Run deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing
+        run: |
+          echo "working"
