@@ -3,10 +3,12 @@ name: Workflow Dispatcher
 on: push
 
 jobs:
-  runs-on: ubuntu-latest
-  - name: Conclusion
-     run: |
-          if [ ${{ steps.step_version.outputs.CAN_UPDATE }} = 'true' ] 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conclusion
+        run: |
+          if [ 'true' = 'true' ] 
           then
             exit 0
           else
