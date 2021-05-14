@@ -7,11 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Conclusion
+      #if [ 'false' = 'true' ] 
+          #then
+          #  exit 0
+          #else
+          #  exit 1
+          #fi
         run: |
-          if [ 'false' = 'true' ] 
-          then
-            exit 0
-          else
-            exit 1
-          fi
+          echo "worked"
         id: conclusion_step
