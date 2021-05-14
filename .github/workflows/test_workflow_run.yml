@@ -14,5 +14,5 @@ jobs:
           #  exit 1
           #fi
         run: |
-          echo "worked"
+          echo "::set-output name=WORK::worked"
         id: conclusion_step
