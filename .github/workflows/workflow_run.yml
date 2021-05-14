@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        #if: ${{ github.event.workflow_run.conclusion_step.WORK == "worked" }}
         run: |
-          echo "working"
+          echo ${{ github.event.workflow_run.conclusion_step.outputs.WORK }}
