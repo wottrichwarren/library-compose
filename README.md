@@ -1,2 +1,2 @@
 # library-compose
-An compose library.
+An compose library
