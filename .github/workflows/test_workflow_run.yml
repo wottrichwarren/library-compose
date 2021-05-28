@@ -9,7 +9,7 @@ env:
   GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
 
 jobs:
-  build:
+  ValidatePr:
     runs-on: ubuntu-latest
     steps:
       - name: Conclusion
