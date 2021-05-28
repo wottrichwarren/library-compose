@@ -2,6 +2,7 @@ name: Workflow Dispatcher
 
 on:
   pull_request:
+    types: [opened, edited, reopened, synchronize]
     branches: [ main ]
     
 env:
