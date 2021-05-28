@@ -9,7 +9,7 @@ on:
 #  GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
 
 jobs:
-  ValidatePr:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Conclusion
