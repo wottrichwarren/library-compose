@@ -1,18 +1,16 @@
 name: Workflow Dispatcher
 
-on: push
+on:
+  pull_request:
+    branches: [ main ]
+    
+env:
+  GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Conclusion
-      #if [ 'false' = 'true' ] 
-          #then
-          #  exit 0
-          #else
-          #  exit 1
-          #fi
         run: |
-          echo "::set-output name=WORK::worked"
-        id: conclusion_step
+          echo "running"
