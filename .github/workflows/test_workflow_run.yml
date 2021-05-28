@@ -2,14 +2,14 @@ name: Workflow Dispatcher
 
 on:
   pull_request:
-    types: [opened, edited, reopened, synchronize]
+    #types: [opened, edited, reopened, synchronize]
     branches: [ main ]
     
 #env:
 #  GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
 
 jobs:
-  validate:
+  validate2:
     runs-on: ubuntu-latest
     steps:
       - name: Conclusion
